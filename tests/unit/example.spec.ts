@@ -17,6 +17,6 @@ describe('HelloWorld.vue', () => {
             propsData: { msg }
         })
 
-        expect(wrapper.text()).toMatch(msg)
+        expect(wrapper.find('h1').text()).toMatch(msg)
     })
 })
