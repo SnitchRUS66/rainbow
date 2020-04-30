@@ -26,7 +26,14 @@
               :headers="headers"
               :items="colors"
               hide-default-footer
-            />
+            >
+              <template v-slot:item.name="{item}">
+                <span :style="`color: ${item.hex}`">{{item.name}}</span>
+              </template>
+              <template v-slot:item.hex="{item}">
+                <span :style="`color: ${item.hex}`">{{item.hex}}</span>
+              </template>
+            </v-data-table>
           </v-card-text>
           <v-card-actions>
             <v-spacer />
